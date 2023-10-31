@@ -33,21 +33,21 @@ Setup
 
 2. copy the `conf/env.conf.sample` to `conf/env.conf` and edit the following parameters
 
-| Parameter Name | Parameter Value                                                                                                              |
-|----------------|------------------------------------------------------------------------------------------------------------------------------|
-|PROJECT_NAME    | Name of the Aiven Project where the Aiven for Apache Kafka service is running                                                |
-|SERVICE_NAME    | Name of the Aiven for Apache Kafka service running                                                                           |
-|TOPIC           | Name of the Topic to write messages in                                                                                       |
-|PARTITIONS      | Number of partitions to set when creating a topic (this will **NOT** alter existing topics)                                  |
-|REPLICATION     | Number of replicas to set when creating a topic (this will **NOT** alter existing topics)                                    |
-|NR_MESSAGES     | Overall number of messages to produce (0 for unlimited))                                                                     |
-|MAX_TIME        | Max time in seconds between messages (0 for no wait)                                                                         |
-|SUBJECT         | Fake data subject (One between `pizza`, `userbehaviour`, `stock`, `realstock` (using the yahoo finance apis) and `metric`)   |
-|USERNAME        | Aiven account username                                                                                                       |
-|TOKEN           | Aiven account token                                                                                                          |
-|PRIVATELINK     | Flag to say if the service is under a privatelink, to fetch the correct URL                                                  |
-|SECURITY        | Flag to say if the Kafka service is using SSL or not, possible values are ``SSL`` or ``PLAINTEXT``                           |
-
+| Parameter Name | Parameter Value                                                                                                                      |
+|----------------|--------------------------------------------------------------------------------------------------------------------------------------|
+|PROJECT_NAME    | Name of the Aiven Project where the Aiven for Apache Kafka service is running                                                        |
+|SERVICE_NAME    | Name of the Aiven for Apache Kafka service running                                                                                   |
+|TOPIC           | Name of the Topic to write messages in                                                                                               |
+|PARTITIONS      | Number of partitions to set when creating a topic (this will **NOT** alter existing topics)                                          |
+|REPLICATION     | Number of replicas to set when creating a topic (this will **NOT** alter existing topics)                                            |
+|NR_MESSAGES     | Overall number of messages to produce (0 for unlimited))                                                                             |
+|MAX_TIME        | Max time in seconds between messages (0 for no wait)                                                                                 |
+|SUBJECT         | Fake data subject (One between `load`, `pizza`, `userbehaviour`, `stock`, `realstock` (using the yahoo finance apis) and `metric`)   |
+|USERNAME        | Aiven account username                                                                                                               |
+|TOKEN           | Aiven account token                                                                                                                  |
+|PRIVATELINK     | Flag to say if the service is under a privatelink, to fetch the correct URL                                                          |
+|SECURITY        | Flag to say if the Kafka service is using SSL or not, possible values are ``SSL`` or ``PLAINTEXT``                                   |
+|COMPRESSION_TYPE| Which compression type to use on the kafka producer. Options include: `gzip`. Omit parameter to avoid using compression              |
 
 To know more about parameters, check the underline [Apache Kafka Python Fake Data Producer](https://github.com/aiven/python-fake-data-producer-for-apache-kafka) repository.
 

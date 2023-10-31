@@ -11,6 +11,11 @@ if [ $PRIVATELINK == "YES" ]; then
   PORT=$(avn --auth-token $TOKEN service get $SERVICE_NAME --project $PROJECT_NAME --json | jq -r '.components[] | select(.route=="privatelink" and .component=="kafka").port')
 fi
 
+COMPRESSION_TYPE_ARG=""
+if [ $COMPRESSION_TYPE == "gzip" ]; then
+  COMPRESSION_TYPE_ARG="--compression-type gzip"
+fi
+
 # Get Certificates
 rm -rf ./certs
 avn --auth-token $TOKEN service user-creds-download $SERVICE_NAME  --project $PROJECT_NAME --username avnadmin -d ./certs
@@ -26,4 +31,5 @@ python python-fake-data-producer-for-apache-kafka/main.py --cert-folder ./certs/
   --nr-messages $NR_MESSAGES \
   --max-waiting-time $MAX_TIME \
   --subject $SUBJECT	\
-  --security-protocol $SECURITY
+  --security-protocol $SECURITY \
+  $COMPRESSION_TYPE_ARG
