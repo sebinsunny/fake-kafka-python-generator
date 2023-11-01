@@ -4,6 +4,7 @@ WORKDIR /usr/src/app
 
 COPY ./run.sh .
 COPY ./conf ./conf
+COPY ./fake-kafka-producer ./fake-kafka-producer
 RUN apt-get update &&\
     apt-get install -y expect &&\
     apt-get install -y jq

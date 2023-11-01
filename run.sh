@@ -24,7 +24,7 @@ avn --auth-token $TOKEN service user-creds-download $SERVICE_NAME  --project $PR
 avn --auth-token $TOKEN service topic-create $SERVICE_NAME $TOPIC --project $PROJECT_NAME --partitions $PARTITIONS --replication $REPLICATION
 
 # Gererate Data
-python python-fake-data-producer-for-apache-kafka/main.py --cert-folder ./certs/ \
+python fake-kafka-producer/main.py --cert-folder ./certs/ \
   --host $HOSTNAME \
   --port $PORT \
   --topic-name $TOPIC \

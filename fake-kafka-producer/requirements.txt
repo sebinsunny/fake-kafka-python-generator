@@ -1,0 +1,3 @@
+yahoo_fin
+faker
+confluent-kafka
